@@ -1,0 +1,298 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #0a0a2a;
+  line-height: 1.6;
+}
+
+/* Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #141452;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+header .logo span {
+  color: #7b4fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #7b4fff;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background: url("https://source.unsplash.com/1600x900/?technology,web")
+    no-repeat center/cover;
+}
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #7b4fff;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #5a36cc;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Étapes */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  background: #1c1c50;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  justify-content: flex-start; /* cartes alignées à gauche */
+  align-items: stretch; /* cartes même hauteur */
+  gap: 30px;
+  flex-wrap: nowrap; /* pas de retour à la ligne */
+  margin-top: 40px;
+  overflow-x: auto; /* scroll horizontal si trop large */
+  padding-bottom: 10px; /* espace pour la scrollbar */
+  -webkit-overflow-scrolling: touch; /* scroll fluide sur iOS */
+  position: relative;
+}
+
+/* Supprimer la scrollbar visible sur certains navigateurs */
+.timeline::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: rgba(123, 79, 255, 0.5);
+  border-radius: 4px;
+}
+.timeline::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Timeline cards */
+.timeline-item.card {
+  background: #ffffff;
+  color: #141452;
+  padding: 25px;
+  border-radius: 20px;
+  flex: 0 0 300px; /* largeur fixe pour toutes les cartes */
+  min-height: 420px; /* hauteur identique */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0.4;
+  transform: scale(0.95);
+  transition: all 0.4s ease-in-out;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: scale(1.05);
+  border: 3px solid #7b4fff;
+  box-shadow: 0px 10px 25px rgba(123, 79, 255, 0.4);
+}
+
+.timeline-item h3 {
+  font-size: 1.4em;
+  color: #7b4fff;
+  margin-bottom: 5px;
+}
+
+.timeline-item .decade {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.timeline-item ul {
+  margin-top: 10px;
+  padding-left: 15px;
+  font-size: 0.9em;
+  line-height: 1.5;
+  flex-grow: 1; /* occupe l’espace dispo */
+}
+
+.timeline-item ul li {
+  margin-bottom: 8px;
+}
+
+/* Controls */
+.timeline-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+.timeline-controls button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background: #7b4fff;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.timeline-controls button:hover {
+  background: #5a36cc;
+  transform: translateY(-2px);
+}
+
+/* Controls */
+.timeline-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+.timeline-controls button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background: #7b4fff;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.timeline-controls button:hover {
+  background: #5a36cc;
+  transform: translateY(-2px);
+}
+
+/* Controls */
+.timeline-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+.timeline-controls button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background: #7b4fff;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.timeline-controls button:hover {
+  background: #5a36cc;
+  transform: translateY(-2px);
+}
+
+/* Contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+.contact input,
+.contact textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+.contact button {
+  padding: 10px;
+  background: #7b4fff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact button:hover {
+  background: #5a36cc;
+}
+
+/* Footer */
+footer {
+  background: #141452;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background: #141452;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+}
