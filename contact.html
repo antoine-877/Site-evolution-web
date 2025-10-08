@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - L'évolution du Web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ================= Header / Navbar ================= -->
+    <header>
+      <div class="logo">Web<span>Evolution</span></div>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="index.html">Accueil</a>
+            <ul class="dropdown-content">
+              <li><a href="index.html#histoire">Histoire</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="etapes.html">Étapes</a>
+            <ul class="dropdown-content">
+              <li><a href="etapes.html#url-http">URL & HTTP</a></li>
+              <li>
+                <a href="etapes.html#noms-domaine">Noms de domaine & DNS</a>
+              </li>
+              <li><a href="etapes.html#standards-web">Standards du Web</a></li>
+              <li><a href="etapes.html#securite">Sécurité</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= Main ================= -->
+    <main>
+      <section id="contact" class="contact">
+        <h2>Contactez-nous</h2>
+        <form action="contact.php" method="POST" class="contact-form">
+          <!-- Nom et Email -->
+          <input
+            type="text"
+            name="nom"
+            placeholder="Votre nom"
+            required
+            class="contact-input"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Votre email"
+            required
+            class="contact-input"
+          />
+
+          <!-- Date de naissance et Sexe -->
+          <div class="contact-row">
+            <select name="jour" required class="contact-select">
+              <option value="" disabled selected>Jour</option>
+              <script>
+                for (let i = 1; i <= 31; i++) {
+                  document.write(`<option value="${i}">${i}</option>`);
+                }
+              </script>
+            </select>
+
+            <select name="mois" required class="contact-select">
+              <option value="" disabled selected>Mois</option>
+              <option value="1">Janvier</option>
+              <option value="2">Février</option>
+              <option value="3">Mars</option>
+              <option value="4">Avril</option>
+              <option value="5">Mai</option>
+              <option value="6">Juin</option>
+              <option value="7">Juillet</option>
+              <option value="8">Août</option>
+              <option value="9">Septembre</option>
+              <option value="10">Octobre</option>
+              <option value="11">Novembre</option>
+              <option value="12">Décembre</option>
+            </select>
+
+            <select name="annee" required class="contact-select">
+              <option value="" disabled selected>Année</option>
+              <script>
+                for (let i = 1925; i <= 2025; i++) {
+                  document.write(`<option value="${i}">${i}</option>`);
+                }
+              </script>
+            </select>
+
+            <select name="sexe" required class="contact-select">
+              <option value="" disabled selected>Sexe</option>
+              <option value="Homme">Homme</option>
+              <option value="Femme">Femme</option>
+              <option value="Autre">Autre</option>
+              <option value="PrefereNePasDire">Préférer ne pas dire</option>
+            </select>
+          </div>
+
+          <!-- Motif du contact -->
+          <select name="motif" id="motif" required class="contact-select">
+            <option value="" disabled selected>Motif de votre contact</option>
+            <option value="Retour sur contenu">Retour sur contenu</option>
+            <option value="Bug / Problème technique">
+              Bug / Problème technique
+            </option>
+            <option value="Suggestion d'amélioration">
+              Suggestion d'amélioration
+            </option>
+            <option value="Autre">Autre</option>
+          </select>
+          <textarea
+            name="motif_autre"
+            id="motif_autre"
+            placeholder="Précisez votre motif"
+            rows="2"
+            class="contact-textarea"
+          ></textarea>
+
+          <!-- Description détaillée -->
+          <textarea
+            name="message"
+            placeholder="Votre message détaillé..."
+            rows="5"
+            required
+            class="contact-textarea"
+          ></textarea>
+
+          <!-- Note / Satisfaction -->
+          <div class="contact-note">
+            <label for="note">Notez votre expérience :</label>
+            <input
+              type="range"
+              id="note"
+              name="note"
+              min="1"
+              max="5"
+              step="1"
+              value="3"
+              oninput="this.nextElementSibling.value = this.value"
+              class="contact-range"
+            />
+            <output>3</output>/5
+          </div>
+
+          <!-- Consentement / Email opt-in -->
+          <div class="contact-checkbox">
+            <input type="checkbox" name="newsletter" id="newsletter" />
+            <label for="newsletter"
+              >Acceptez de recevoir nos mises à jour par email</label
+            >
+          </div>
+
+          <!-- Submit / Reset -->
+          <div class="contact-buttons">
+            <button type="submit" class="btn">Envoyer</button>
+            <button type="reset" class="btn btn-reset">Réinitialiser</button>
+          </div>
+        </form>
+        <br /><br />
+        <div class="form-note">
+          <p>
+            💡 Conseil : plus vos retours sont détaillés, plus ils seront utiles
+            pour améliorer le site.
+          </p>
+        </div>
+      </section>
+
+      <!-- Script pour afficher la zone "Autre" -->
+      <script>
+        const motifSelect = document.getElementById("motif");
+        const motifAutre = document.getElementById("motif_autre");
+        motifAutre.style.display = "none";
+
+        motifSelect.addEventListener("change", () => {
+          if (motifSelect.value === "Autre") {
+            motifAutre.style.display = "block";
+            motifAutre.required = true;
+          } else {
+            motifAutre.style.display = "none";
+            motifAutre.required = false;
+          }
+        });
+      </script>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer>
+      <p>© 2025 L'évolution du Web - Tous droits réservés</p>
+      <p>Nathanael Lenaerts et Antoine Mertens</p>
+    </footer>
+
+    <!-- ================= Script ================= -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

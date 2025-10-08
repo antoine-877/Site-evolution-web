@@ -7,69 +7,134 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- ================= Header / Navbar ================= -->
     <header>
       <div class="logo">Web<span>Evolution</span></div>
       <nav>
         <ul>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#histoire">Histoire</a></li>
-          <li><a href="#etapes">Étapes</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="index.html">Accueil</a>
+            <ul class="dropdown-content">
+              <li><a href="index.html#histoire">Histoire</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="etapes.html" class="dropbtn">Étapes</a>
+            <ul class="dropdown-content">
+              <li><a href="etapes.html#url-http">URL & HTTP</a></li>
+              <li>
+                <a href="etapes.html#noms-domaine">Noms de domaine & DNS</a>
+              </li>
+              <li><a href="etapes.html#standards-web">Standards du Web</a></li>
+              <li><a href="etapes.html#securite">Sécurité</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
+    <main>
+      <!-- ================= Hero Section ================= -->
+      <section id="accueil" class="hero">
+        <canvas id="waves"></canvas>
+        <div class="hero-content">
+          <h1>L'évolution du Web</h1>
+          <p>
+            Découvrez comment Internet a transformé notre monde depuis ses
+            débuts jusqu'à aujourd'hui.
+          </p>
+          <a href="#histoire" class="btn">Explorer</a>
+        </div>
+      </section>
 
-    <!-- Hero -->
-    <section id="accueil" class="hero">
-      <div class="hero-content">
-        <h1>L'évolution du Web</h1>
+      <!-- ================= Histoire ================= -->
+      <section id="histoire" class="histoire">
+        <h2 style="text-align: center; width: 100%; margin: 40px 0">
+          Les grandes étapes de l'évolution du Web
+        </h2>
+
+        <br />
         <p>
-          Découvrez comment Internet a transformé notre monde depuis ses débuts
-          jusqu’à aujourd’hui.
+          Le web est né dans les années 90 et a beaucoup évolué depuis. Au
+          début, le <strong>Web 1.0</strong> était surtout statique : les sites
+          étaient simples et on ne pouvait que lire l'information.<br /><br />
+          Avec le <strong>Web 2.0</strong>, le web est devenu collaboratif : on
+          peut partager, commenter et créer du contenu facilement.<br /><br />Aujourd'hui,
+          le <strong>Web 3.0</strong> promet un web plus intelligent et
+          décentralisé, où les données sont mieux protégées et où les
+          applications peuvent interagir de manière plus autonome.
         </p>
-        <a href="#histoire" class="btn">Explorer</a>
-      </div>
-    </section>
+      </section>
 
-    <!-- Histoire -->
-    <section id="histoire" class="histoire">
-      <h2>Un voyage dans le temps</h2>
-      <p>
-        Le web est né dans les années 90 et a connu plusieurs révolutions : du
-        Web 1.0 statique, au Web 2.0 collaboratif, jusqu’au Web 3.0
-        décentralisé.
-      </p>
-    </section>
-
-    <!-- Étapes -->
-    <!-- Timeline -->
-    <section id="etapes" class="etapes">
-      <h2>Les grandes étapes de l’évolution du Web</h2>
+      <!-- ================= Timeline ================= -->
+      <h2
+        class="title-center"
+        style="text-align: center; width: 100%; margin: 40px 0"
+      >
+        Les grandes étapes de l'évolution du Web
+      </h2>
+      <br /><br />
       <div class="timeline">
+        <!-- Items de timeline inchangés -->
         <!-- 1960s-1970s -->
-        <div class="timeline-item active card">
-          <h3>1960s–1970s : Prémices</h3>
-          <p class="decade">Les fondations d’Internet</p>
+        <div class="timeline-item card">
+          <h3>1960s—1970s : Prémices</h3>
+          <p class="decade">
+            Débuts de l'infrastructure réseau et des communications
+            électroniques
+          </p>
+          <br />
           <ul>
             <li>
-              <strong>1969 :</strong> ARPANET (premier réseau à commutation de
-              paquets).
+              <strong>1969 :</strong>
+              <a href="https://fr.wikipedia.org/wiki/ARPANET">ARPANET</a>
+              (premier réseau à commutation de paquets).
             </li>
-            <li><strong>1971 :</strong> Premier email par Ray Tomlinson.</li>
-            <li><strong>1973 :</strong> TCP/IP (socle d’Internet).</li>
+            <li>
+              <strong>1971 :</strong> Premier email par
+              <a href="https://fr.wikipedia.org/wiki/Ray_Tomlinson"
+                >Ray Tomlinson</a
+              >.
+            </li>
+            <li>
+              <strong>1973 :</strong>
+              <a
+                href="https://fr.wikipedia.org/wiki/Transmission_Control_Protocol"
+                >TCP/IP</a
+              >
+              (socle d'Internet).
+            </li>
           </ul>
         </div>
 
         <!-- 1980s -->
         <div class="timeline-item card">
-          <h3>1980s : Infrastructure d’Internet</h3>
-          <p class="decade">Internet moderne prend forme</p>
+          <h3>1980s : Infrastructure d'Internet</h3>
+          <p class="decade">
+            Standardisation et expansion des réseaux mondiaux
+          </p>
+          <br />
           <ul>
-            <li><strong>1983 :</strong> TCP/IP officiel → Internet moderne.</li>
-            <li><strong>1984 :</strong> DNS (Domain Name System).</li>
             <li>
-              <strong>1986 :</strong> NSFNET (réseau universitaire global).
+              <strong>1983 :</strong>
+              <a
+                href="https://fr.wikipedia.org/wiki/Transmission_Control_Protocol"
+                >TCP/IP</a
+              >
+              devient protocole officiel → Internet moderne.
+            </li>
+            <li>
+              <strong>1984 :</strong>
+              <a href="https://fr.wikipedia.org/wiki/Domain_Name_System">DNS</a>
+              (Domain Name System).
+            </li>
+            <li>
+              <strong>1986 :</strong>
+              <a
+                href="https://en.wikipedia.org/wiki/National_Science_Foundation_Network"
+                >NSFNET</a
+              >
+              (réseau universitaire global).
             </li>
           </ul>
         </div>
@@ -78,22 +143,30 @@
         <div class="timeline-item card">
           <h3>1990s : Naissance du Web</h3>
           <p class="decade">Du Web statique au Web grand public</p>
+          <br />
           <ul>
-            <li><strong>1989–1991 :</strong> WWW (HTML, HTTP, URL).</li>
             <li>
-              <strong>1993 :</strong> Mosaic (premier navigateur graphique).
+              <strong>1989—1991 :</strong>
+              <a href="https://en.wikipedia.org/wiki/World_Wide_Web">WWW</a>
+              (HTML, HTTP, URL).
+            </li>
+            <li>
+              <strong>1993 :</strong>
+              <a href="https://fr.wikipedia.org/wiki/NCSA_Mosaic">Mosaic</a>
+              (premier navigateur graphique).
             </li>
             <li><strong>1994 :</strong> Netscape Navigator.</li>
-            <li><strong>1995 :</strong> JavaScript + CSS.</li>
-            <li><strong>1998 :</strong> Google.</li>
-            <li><strong>1999 :</strong> Napster (P2P).</li>
           </ul>
         </div>
 
         <!-- 2000s -->
         <div class="timeline-item card">
           <h3>2000s : Web 2.0 et économie numérique</h3>
-          <p class="decade">Collaboratif et réseaux sociaux</p>
+          <p class="decade">
+            Collaboratif, réseaux sociaux et contenus générés par les
+            utilisateurs
+          </p>
+          <br />
           <ul>
             <li><strong>2001 :</strong> Wikipédia.</li>
             <li><strong>2003 :</strong> WordPress.</li>
@@ -109,14 +182,23 @@
         <!-- 2010s -->
         <div class="timeline-item card">
           <h3>2010s : Cloud, API et mobilité</h3>
-          <p class="decade">Un Web mobile, rapide et universel</p>
+          <p class="decade">
+            Un Web mobile, rapide, connecté et basé sur le cloud
+          </p>
+          <br />
           <ul>
             <li><strong>2010 :</strong> Instagram.</li>
             <li><strong>2011 :</strong> HTML5.</li>
             <li><strong>2012 :</strong> Dropbox / Google Drive.</li>
             <li><strong>2014 :</strong> HTTPS obligatoire.</li>
             <li><strong>2015 :</strong> PWA (Progressive Web Apps).</li>
-            <li><strong>2016 :</strong> RGPD.</li>
+            <li>
+              <strong>2016 :</strong>
+              <a
+                href="https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es"
+                >RGPD</a
+              >.
+            </li>
             <li><strong>2017 :</strong> IA et assistants vocaux.</li>
           </ul>
         </div>
@@ -124,45 +206,44 @@
         <!-- 2020s -->
         <div class="timeline-item card">
           <h3>2020s : Web intelligent et décentralisé</h3>
-          <p class="decade">IA, blockchain et métavers</p>
+          <p class="decade">
+            Intelligence artificielle, blockchain et expériences immersives
+          </p>
+          <br />
           <ul>
             <li><strong>2020 :</strong> Télétravail massif (Zoom, Teams).</li>
-            <li><strong>2021 :</strong> NFT & Web3.</li>
-            <li><strong>2022 :</strong> Métavers.</li>
             <li>
-              <strong>2023–2025 :</strong> IA générative (ChatGPT, Copilot,
+              <strong>2021 :</strong>
+              <a href="http://fr.wikipedia.org/wiki/NFT">NFT</a> &
+              <a href="https://fr.wikipedia.org/wiki/Web3">Web3</a>.
+            </li>
+            <li>
+              <strong>2022 :</strong>
+              <a href="https://fr.wikipedia.org/wiki/M%C3%A9tavers">Métavers</a
+              >.
+            </li>
+            <li>
+              <strong>2023—2025 :</strong> IA générative (ChatGPT, Copilot,
               Gemini).
             </li>
           </ul>
         </div>
       </div>
 
+      <!-- ================= Timeline Controls ================= -->
       <div class="timeline-controls">
-        <button id="prev">⬅️ Précédent</button>
-        <button id="next">➡️ Suivant</button>
+        <button id="prev">◀ Précédent</button>
+        <button id="next">Suivant ▶</button>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2>Contactez-nous</h2>
-      <form action="contact.php" method="POST">
-        <input type="text" name="nom" placeholder="Votre nom" required />
-        <input type="email" name="email" placeholder="Votre email" required />
-        <textarea
-          name="message"
-          placeholder="Votre message"
-          required
-        ></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-
-    <!-- Footer -->
+      <br /><br /><br /><br />
+    </main>
+    <!-- ================= Footer ================= -->
     <footer>
       <p>© 2025 L'évolution du Web - Tous droits réservés</p>
+      <p>Nathanael Lenaerts et Antoine Mertens</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ================= Script ================= -->
+    <script src="script.js" defer></script>
   </body>
 </html>
